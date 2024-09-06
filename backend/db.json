@@ -1,13 +1,28 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": 1,
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "test"
+    }
+  ],
 
-    ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "test",
+      "description": "test",
+      "users": [1]
+    }
+  ],
 
-    "projects":[
-
-    ],
-
-    "tasks": [
-        
-    ]
+  "tasks": [
+    {
+      "id": 1,
+      "name": "test",
+      "description": "test",
+      "projectId": 1
+    }
+  ]
 }

@@ -1,0 +1,10 @@
+{
+  "sider": {
+    "project-menu": "Projet",
+    "today-task": "Aujourd'hui",
+    "weekly-task": "7 jours",
+    "monthly-task": "30 jours",
+    "all-task": "Toutes les tâches"
+  },
+  "auth": {}
+}
