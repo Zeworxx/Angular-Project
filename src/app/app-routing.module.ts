@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'project', component: ProjectComponent },
+  { path: 'user/:userId/projects', component: ProjectComponent },
 ];
 
 @NgModule({

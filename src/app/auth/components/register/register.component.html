@@ -1,1 +1,50 @@
-<p>register works!</p>
+<form nz-form [formGroup]="registerForm" class="register-form" (ngSubmit)="submitForm()">
+    <nz-form-item>
+
+        <nz-form-control nzErrorTip="Ce n'est pas une adresse e-mail valide">
+            <nz-input-group nzPrefixIcon="mail">
+                <input nzRequired type="text" nz-input formControlName="email" placeholder="email" />
+            </nz-input-group>
+        </nz-form-control>
+
+    </nz-form-item>
+
+    <nz-form-item>
+
+        <nz-form-control>
+            <nz-input-group nzPrefixIcon="lock">
+                <input type="password" nzRequired nz-input formControlName="password" placeholder="Password" />
+            </nz-input-group>
+        </nz-form-control>
+
+    </nz-form-item>
+
+    <nz-form-item>
+
+        <nz-form-control >
+            <nz-input-group nzPrefixIcon="lock">
+                <input type="password" nzRequired nz-input formControlName="checkPassword" placeholder="Confirm password" />
+                
+            </nz-input-group>
+        </nz-form-control>
+
+    </nz-form-item>
+
+    <nz-form-item>
+
+        <nz-form-control>
+            <nz-input-group nzPrefixIcon="user">
+                <input nz-input type="text" nzRequired formControlName="name" placeholder="name" />
+            </nz-input-group>
+        </nz-form-control>
+
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-control>
+            <button nz-button class="register-form-button register-form-margin" [nzType]="'primary'">{{"auth.register" | translate}}</button>
+        </nz-form-control>
+    </nz-form-item>
+
+
+</form>
