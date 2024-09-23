@@ -12,11 +12,13 @@ import { NZ_I18N, fr_FR } from 'ng-zorro-antd/i18n';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzFormModule } from 'ng-zorro-antd/form';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { ProjectComponent } from './project/project.component';
+import { NzInputModule } from 'ng-zorro-antd/input';
 
 registerLocaleData(fr);
 
@@ -32,8 +34,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     NzLayoutModule,
     NzButtonModule,
     NzIconModule,
+    NzInputModule,
     HttpClientModule,
     NzMenuModule,
+    NzFormModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({

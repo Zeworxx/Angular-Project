@@ -6,5 +6,15 @@
     "monthly-task": "30 jours",
     "all-task": "Toutes les tâches"
   },
-  "auth": {}
+  "auth": {
+    "login": "Se connecter",
+    "register": "S'inscrire",
+    "not-registered": "Vous n'avez pas de compte?",
+    "forgot-password": "Mot de passe oublie",
+    "password": "Mot de passe",
+    "confirm-password": "Confirmez le MDP",
+    "error-password": "S'il vous plaît confirmer votre mot de passe",
+    "error-confirm": "Les deux mots de passe que vous saisissez sont incohérents !",
+    "error-email": "Ce n'est pas une adresse e-mail valide"
+  }
 }

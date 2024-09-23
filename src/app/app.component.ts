@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private translateService: TranslateService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
     this.translateService.setDefaultLang('fr');
   }
@@ -26,4 +28,10 @@ export class AppComponent implements OnInit {
           event.url === '/login' || event.url === '/register';
       });
   }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+
 }
