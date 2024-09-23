@@ -19,6 +19,8 @@ import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { ProjectComponent } from './project/project.component';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { CreateTicketComponent } from './project/create-ticket/create-ticket.component';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 registerLocaleData(fr);
 
@@ -27,7 +29,14 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, ProjectComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProjectComponent,
+    CreateTicketComponent,
+    CreateTicketComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     NzMenuModule,
     NzFormModule,
+    NzSelectModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({

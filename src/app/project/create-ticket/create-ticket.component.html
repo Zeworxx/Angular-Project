@@ -1,0 +1,60 @@
+<form [formGroup]="ticketForm" (ngSubmit)="submitForm()" class="ticket-form">
+  <nz-form-item class="form-item">
+    <nz-form-control nzErrorTip="Titre requis">
+      <nz-input-group nzPrefixIcon="edit">
+        <input nz-input formControlName="title" placeholder="Titre" class="input-field" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item class="form-item">
+    <nz-form-control nzErrorTip="Description requise">
+      <nz-input-group nzPrefixIcon="file-text">
+        <textarea
+          nz-input
+          formControlName="description"
+          placeholder="Description"
+          rows="3"
+          class="textarea-field"
+        ></textarea>
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item class="form-item">
+    <nz-form-control nzErrorTip="Statut requis">
+      <nz-select formControlName="status" placeholder="Statut" class="select-field">
+        <nz-option nzValue="en attente" nzLabel="En attente"></nz-option>
+        <nz-option nzValue="en cours" nzLabel="En cours"></nz-option>
+        <nz-option nzValue="terminé" nzLabel="Terminé"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <div *ngFor="let subtask of subtasks.controls; let i = index" [formGroupName]="i" class="subtask-item">
+    <nz-form-item class="form-item">
+      <nz-form-control nzErrorTip="Titre requis">
+        <nz-input-group nzPrefixIcon="edit">
+          <input
+            nz-input
+            formControlName="title"
+            placeholder="Titre de la sous-tâche"
+            class="input-field"
+          />
+        </nz-input-group>
+      </nz-form-control>
+      <button nz-button nzType="default" class="danger-button" (click)="removeSubtask(i)">
+        Supprimer
+      </button>
+    </nz-form-item>
+  </div>
+
+  <div class="actions">
+    <button nz-button nzType="dashed" (click)="addSubtask()" class="add-button">
+      Ajouter une sous-tâche
+    </button>
+    <button nz-button nzType="primary" [disabled]="ticketForm.invalid" class="submit-button">
+      Créer le ticket
+    </button>
+  </div>
+</form>
