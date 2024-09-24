@@ -25,7 +25,9 @@ export class AppComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.isLoginOrRegister =
-          event.url === '/login' || event.url === '/register' || event.url === '/';
+          event.url === '/login' ||
+          event.url === '/register' ||
+          event.url === '/';
       });
   }
 
@@ -33,5 +35,4 @@ export class AppComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
-
 }

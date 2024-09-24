@@ -37,16 +37,6 @@
   ],
   "tickets": [
     {
-      "id": "1",
-      "name": "test",
-      "description": "test",
-      "subtasks": [
-        {
-          "title": "sous tache n°1"
-        }
-      ]
-    },
-    {
       "id": 0,
       "title": "Test",
       "description": "test",

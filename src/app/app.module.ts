@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NZ_I18N, fr_FR } from 'ng-zorro-antd/i18n';
@@ -21,7 +22,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { CreateTicketComponent } from './project/create-ticket/create-ticket.component';
-import { ProjectComponent } from './project/project.component';
+import { TicketListComponent } from './ticket-list/components/ticket-list.component';
 
 registerLocaleData(fr);
 
@@ -34,9 +35,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ProjectComponent,
     CreateTicketComponent,
-    CreateTicketComponent,
+    TicketListComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +52,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NzSelectModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    NzCollapseModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

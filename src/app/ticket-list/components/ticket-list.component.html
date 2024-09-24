@@ -1,0 +1,26 @@
+<div class="task-list-header">
+  <h2>AAAA</h2>
+</div>
+<nz-collapse>
+  <nz-collapse-panel
+    [nzHeader]="ticket.title"
+    [nzExtra]="extraTpl"
+    *ngFor="let ticket of tickets"
+  >
+    <p>
+      {{ "tickets.description-label" | translate }} {{ ticket.description }}
+    </p>
+    <p>
+      {{ "tickets.due-date-label" | translate }}
+      {{ ticket.dueDate | date : "dd/MM/yyyy" }}
+    </p>
+    <p *ngFor="let subTask of ticket.subtasks; let i = index">
+      {{ "tickets.sub-task-label" | translate : { index: i + +1 } }}
+      {{ subTask.title }}
+    </p>
+  </nz-collapse-panel>
+</nz-collapse>
+<ng-template #extraTpl>
+  <!-- You can use stopPropagation if you don't want the panel to toggle -->
+  <span nz-icon nzType="setting" (click)="$event.stopPropagation()"></span>
+</ng-template>

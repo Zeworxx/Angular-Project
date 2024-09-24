@@ -1,19 +1,17 @@
 <nz-layout>
   <nz-sider nzCollapsible nzWidth="200px" *ngIf="!isLoginOrRegister">
-    <div class="logo" >
-      <span nz-icon nzType="poweroff" nzTheme="outline"  (click)="logout()"></span>
+    <div class="logo">
+      <span
+        nz-icon
+        nzType="poweroff"
+        nzTheme="outline"
+        (click)="logout()"
+      ></span>
     </div>
     <ul nz-menu nzTheme="light" nzMode="inline">
-      <li
-        nz-submenu
-        nzTitle="{{ 'sider.project-menu' | translate }}"
-        nzIcon="ordered-list"
-      >
-        <ul>
-          <li nz-menu-item>Tom</li>
-          <li nz-menu-item>Bill</li>
-          <li nz-menu-item>Alex</li>
-        </ul>
+      <li nz-menu-item [routerLink]="'create-ticket'">
+        <span nz-icon nzType="plus-circle" nzTheme="outline"></span>
+        <span>{{ "sider.add-task" | translate }}</span>
       </li>
       <li nz-menu-item>
         <span nz-icon nzType="field-time"></span>
@@ -27,13 +25,13 @@
         <span nz-icon nzType="field-time"></span>
         <span>{{ "sider.monthly-task" | translate }}</span>
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item [routerLink]="'ticket-list/all'">
         <span nz-icon nzType="field-time"></span>
         <span>{{ "sider.all-task" | translate }}</span>
       </li>
     </ul>
   </nz-sider>
-  <nz-layout>
+  <nz-layout class="main-content">
     <nz-content>
       <router-outlet></router-outlet>
     </nz-content>

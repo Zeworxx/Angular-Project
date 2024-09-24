@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './../../services/auth.service';
 import { FormControl, FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         this.authService.user = user[0];
         if(!this.authService.user) return;
         this.authService.saveUser();
-        this.router.navigate(['user/' + this.authService.user.id + '/projects']);
+        this.router.navigate(['/ticket-list/all']);
       },
       (error) => {
         alert('Erreur dans la requette');

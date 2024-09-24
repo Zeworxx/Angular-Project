@@ -4,7 +4,8 @@
     "today-task": "Aujourd'hui",
     "weekly-task": "7 jours",
     "monthly-task": "30 jours",
-    "all-task": "Toutes les tâches"
+    "all-task": "Toutes les tâches",
+    "add-task": "Ajouter une tâche"
   },
   "auth": {
     "login": "Se connecter",
@@ -15,12 +16,17 @@
     "confirm-password": "Confirmez le MDP",
     "error-password": "S'il vous plaît confirmer votre mot de passe",
     "error-confirm": "Les deux mots de passe que vous saisissez sont incohérents !",
-    "error-email": "Ce n'est pas une adresse e-mail valide", 
-    "placeholder" : {
+    "error-email": "Ce n'est pas une adresse e-mail valide",
+    "placeholder": {
       "email": "Email",
       "password": "Mot de passe",
       "confirm-password": "Confirmez le mot de passe",
       "name": "Nom"
     }
+  },
+  "tickets": {
+    "description-label": "Description :",
+    "due-date-label": "Date de fin :",
+    "sub-task-label": "Sous-tâches N°{{index}} :"
   }
 }
