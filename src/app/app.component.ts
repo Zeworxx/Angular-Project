@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.isLoginOrRegister =
-          event.url === '/login' || event.url === '/register';
+          event.url === '/login' || event.url === '/register' || event.url === '/';
       });
   }
 

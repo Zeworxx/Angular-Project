@@ -23,6 +23,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  > span {
+    cursor: pointer;
+  }
+
+  &:hover {
+    > span {
+      color: white;
+    }
+  }
 }
 
 nz-sider {
@@ -49,6 +58,8 @@ nz-footer {
   text-align: center;
 }
 
-.logo:hover & .logout:hover {
-  color: red;
-}
+// .logo:hover {
+//   > span {
+//     color: white;
+//   }
+// }
