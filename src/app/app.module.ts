@@ -8,19 +8,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzFormModule } from 'ng-zorro-antd/form';
 import { NZ_I18N, fr_FR } from 'ng-zorro-antd/i18n';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
-import { ProjectComponent } from './project/project.component';
-import { NzInputModule } from 'ng-zorro-antd/input';
 import { CreateTicketComponent } from './project/create-ticket/create-ticket.component';
-import { NzSelectModule } from 'ng-zorro-antd/select';
+import { ProjectComponent } from './project/project.component';
 
 registerLocaleData(fr);
 
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     NzMenuModule,
     NzFormModule,
+    NzDatePickerModule,
     NzSelectModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

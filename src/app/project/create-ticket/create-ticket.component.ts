@@ -6,6 +6,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { TicketService } from '../../auth/services/ticket.service';
+import { ITicket } from '../../auth/models/ticket';
+import { dueDateValidator } from '../validators/date.validators';
 
 @Component({
   selector: 'app-create-ticket',
@@ -15,13 +18,14 @@ import {
 export class CreateTicketComponent implements OnInit {
   ticketForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private ticketService: TicketService) {}
 
   ngOnInit(): void {
     this.ticketForm = this.fb.group({
       title: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
-      status: new FormControl('en attente', [Validators.required]),
+      dueDate: new FormControl('', [Validators.required, dueDateValidator]), // Ajouter le validateur personnalisé
+      status: new FormControl('todo', [Validators.required]),
       subtasks: this.fb.array([]),
     });
   }
@@ -44,6 +48,23 @@ export class CreateTicketComponent implements OnInit {
 
   submitForm() {
     if (this.ticketForm.invalid) return;
-    console.log(this.ticketForm.value);
+
+    const newTicket: ITicket = {
+      id: 0,
+      title: this.ticketForm.value.title,
+      description: this.ticketForm.value.description,
+      dueDate: this.ticketForm.value.dueDate,
+      status: this.ticketForm.value.status,
+      subtasks: this.ticketForm.value.subtasks,
+    };
+
+    this.ticketService.createTicket(newTicket).subscribe(
+      (ticket) => {
+        console.log('Ticket créé avec succès:', ticket);
+      },
+      (error) => {
+        console.error('Erreur lors de la création du ticket:', error);
+      }
+    );
   }
 }
