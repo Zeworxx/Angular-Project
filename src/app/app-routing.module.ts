@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'create-ticket', component: CreateTicketComponent },
   { path: 'ticket-list/all', component: TicketListComponent },
+  { path: 'user/:userId/create-ticket', component: CreateTicketComponent },
 ];
 
 @NgModule({

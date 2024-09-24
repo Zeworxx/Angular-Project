@@ -9,6 +9,8 @@ import {
 import { TicketService } from '../../auth/services/ticket.service';
 import { ITicket } from '../../auth/models/ticket';
 import { dueDateValidator } from '../validators/date.validators';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-create-ticket',
@@ -17,10 +19,15 @@ import { dueDateValidator } from '../validators/date.validators';
 })
 export class CreateTicketComponent implements OnInit {
   ticketForm: FormGroup;
+  private userId: number;
 
-  constructor(private fb: FormBuilder, private ticketService: TicketService) {}
+  constructor(private fb: FormBuilder, private ticketService: TicketService, private route: ActivatedRoute, private authService: AuthService) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.userId = params['userId'];
+    })
+
     this.ticketForm = this.fb.group({
       title: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
@@ -56,6 +63,7 @@ export class CreateTicketComponent implements OnInit {
       dueDate: this.ticketForm.value.dueDate,
       status: this.ticketForm.value.status,
       subtasks: this.ticketForm.value.subtasks,
+      user: this.userId,
     };
 
     this.ticketService.createTicket(newTicket).subscribe(
