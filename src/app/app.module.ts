@@ -17,6 +17,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,6 +60,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NzCollapseModule,
+    NzNotificationModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

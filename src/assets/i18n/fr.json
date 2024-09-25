@@ -34,6 +34,8 @@
     "sub-task-label": "Sous-tâches N°{{index}} :",
     "days-remaining": "Jours restants",
     "deadline-passed": "Échéance dépassée",
+    "created-notification": "Tâche créée avec succès",
+    "success-title": "Succès",
     "title": {
       "today": "Tâches d'aujourd'hui",
       "weekly": "Tâches de la semaine",

@@ -7,6 +7,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { ITicket } from '../../ticket-list/models/ticket';
 import { TicketService } from '../../ticket-list/services/ticket.service';
@@ -25,7 +27,9 @@ export class CreateTicketComponent implements OnInit {
     private fb: FormBuilder,
     private ticketService: TicketService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private notification: NzNotificationService,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -69,13 +73,19 @@ export class CreateTicketComponent implements OnInit {
       user: this.userId,
     };
 
-    this.ticketService.createTicket(newTicket).subscribe(
-      (ticket) => {
+    this.ticketService.createTicket(newTicket).subscribe({
+      next: () => {
+        this.notification.create(
+          'success',
+          this.translateService.instant('tickets.created-notification'),
+          this.translateService.instant('tickets.success-title'),
+          { nzPlacement: 'bottomRight', nzDuration: 3000 }
+        );
         this.router.navigate(['/ticket-list/all']);
       },
-      (error) => {
+      error: (error) => {
         console.error('Erreur lors de la création du ticket:', error);
-      }
-    );
+      },
+    });
   }
 }
