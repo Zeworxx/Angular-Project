@@ -14,6 +14,10 @@
       {{ "tickets.due-date-label" | translate }}
       {{ ticket.dueDate | date : "dd/MM/yyyy" }}
     </p>
+    <p>
+      {{ "tickets.due-time-left" | translate }}
+      {{ ticket.dueDate | daysRemaining }}
+    </p>
     <p *ngFor="let subTask of ticket.subtasks; let i = index">
       {{ "tickets.sub-task-label" | translate : { index: i + +1 } }}
       {{ subTask.title }}

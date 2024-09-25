@@ -19,14 +19,12 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class CreateTicketComponent implements OnInit {
   ticketForm: FormGroup;
-  private userId: number;
+  private userId: string;
 
   constructor(private fb: FormBuilder, private ticketService: TicketService, private route: ActivatedRoute, private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.userId = params['userId'];
-    })
+    this.userId = this.authService.getSavedUser();
 
     this.ticketForm = this.fb.group({
       title: new FormControl('', [Validators.required]),

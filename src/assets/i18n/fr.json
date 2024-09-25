@@ -27,6 +27,9 @@
   "tickets": {
     "description-label": "Description :",
     "due-date-label": "Date de fin :",
-    "sub-task-label": "Sous-tâches N°{{index}} :"
+    "due-time-left": "Temps restant :",
+    "sub-task-label": "Sous-tâches N°{{index}} :",
+    "days-remaining": "Jours restants",
+    "deadline-passed": "echeance depassee"
   }
 }
