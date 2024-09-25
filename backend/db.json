@@ -37,49 +37,21 @@
   ],
   "tickets": [
     {
-      "id": "1",
-      "name": "test",
-      "description": "test",
-      "subtasks": [
-        {
-          "title": "sous tache n°1"
-        }
-      ],
-      "user": "1"
-    },
-    {
       "id": "0",
-      "title": "Test",
-      "description": "test",
+      "title": "test user id",
+      "description": "test user id dans le ticket",
+      "dueDate": "2024-09-28T08:45:13.207Z",
       "status": "todo",
-      "subtasks": [
-        {
-          "title": "test sous tache"
-        }
-      ],
-      "user": "1"
-    },
-    {
-      "id": "0",
-      "title": "test2",
-      "description": "test 2",
-      "dueDate": "2024-09-25T09:50:39.157Z",
-      "status": "todo",
-      "subtasks": [
-        {
-          "title": "sous tache"
-        }
-      ],
-      "user": "1"
+      "subtasks": []
     },
     {
       "id": 0,
-      "title": "test",
-      "description": "test",
-      "dueDate": "2024-09-25T13:41:29.302Z",
+      "title": "test ticker user id",
+      "description": "je teste pour voir si le ticket a ke user id",
+      "dueDate": "2024-09-28T09:10:45.974Z",
       "status": "todo",
       "subtasks": [],
-      "user": "1"
+      "user": "d6d7"
     }
   ]
 }

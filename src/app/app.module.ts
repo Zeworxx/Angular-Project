@@ -23,6 +23,7 @@ import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { CreateTicketComponent } from './project/create-ticket/create-ticket.component';
 import { TicketListComponent } from './ticket-list/components/ticket-list.component';
+import { DaysRemaining } from './shared/pipe/daysremaining.pipe';
 
 registerLocaleData(fr);
 
@@ -37,6 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     RegisterComponent,
     CreateTicketComponent,
     TicketListComponent,
+    DaysRemaining,
   ],
   imports: [
     BrowserModule,

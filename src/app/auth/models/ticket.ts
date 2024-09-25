@@ -5,7 +5,7 @@ export interface ITicket {
     description: string;
     dueDate: Date;
     subtasks: ISubtask[];
-    user: number;
+    user: string;
 }
 
 export interface ISubtask {
