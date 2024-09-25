@@ -6,7 +6,11 @@
     [nzHeader]="ticket.title"
     [nzExtra]="extraTpl"
     *ngFor="let ticket of tickets"
-  >
+    [ngClass]="{
+      'todo': ticket.status === 'todo',
+      'in-progress': ticket.status === 'inProgress',
+      'done': ticket.status === 'finished'
+    }"  >
     <p>
       {{ "tickets.description-label" | translate }} {{ ticket.description }}
     </p>
