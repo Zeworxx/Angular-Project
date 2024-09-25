@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/ticket-list/all']);
       },
       (error) => {
-        alert('Erreur dans la requette');
+        alert(`Erreur dans la requette ${error.message}`);
       }
     );
   }

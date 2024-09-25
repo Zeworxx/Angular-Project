@@ -1,4 +1,7 @@
 {
+  "footer": {
+    "label": "© 2021 Tous droits réservés. Conçu par Amir Talbi, Dorian Mavoungoud & Baptiste Girard"
+  },
   "sider": {
     "project-menu": "Projet",
     "today-task": "Aujourd'hui",
