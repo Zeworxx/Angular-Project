@@ -12,35 +12,15 @@
   "users": [
     {
       "id": "1",
-      "name": "test",
+      "name": "test account",
       "email": "test@gmail.com",
-      "password": "test"
+      "password": "gmail"
     },
     {
-      "id": "d6d7",
-      "email": "test@test",
-      "password": "test",
-      "name": "azert"
-    },
-    {
-      "id": "a401",
-      "email": "tata@tata",
-      "password": "tata",
-      "name": "tata"
-    },
-    {
-      "id": "820b",
-      "email": "ba@g.com",
-      "password": "123456",
-      "name": "zrg"
-    }
-  ],
-  "projects": [
-    {
-      "id": "1",
-      "name": "test",
-      "description": "test",
-      "users": [1]
+      "id": "2",
+      "name": "compte test",
+      "email": "test@live.com",
+      "password": "live"
     }
   ],
   "tickets": [
