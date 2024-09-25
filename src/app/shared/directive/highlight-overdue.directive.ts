@@ -1,10 +1,18 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Directive({
   selector: '[appHighlightOverdue]',
 })
 export class HighlightOverdueDirective implements OnInit {
   @Input() dueDate: Date;
+  @Output() done: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private el: ElementRef) {}
 
@@ -14,6 +22,7 @@ export class HighlightOverdueDirective implements OnInit {
 
     if (this.isDateOverdue(dueDate, currentDate)) {
       this.el.nativeElement.style.backgroundColor = 'red';
+      this.done.emit('Vous avez des tickets avec une date dépassée.');
     }
   }
 

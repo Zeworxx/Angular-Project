@@ -13,6 +13,7 @@
     }"
     appHighlightOverdue
     [dueDate]="ticket.dueDate"
+    (done)="handleOverdueNotification($event)"
   >
     <p>
       {{ "tickets.description-label" | translate }} {{ ticket.description }}

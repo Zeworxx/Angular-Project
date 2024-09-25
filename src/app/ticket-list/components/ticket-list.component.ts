@@ -5,6 +5,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { EditTicketModalComponent } from '../../project/edit-ticket-modal/edit-ticket-modal.component';
 import { ITicket } from '../models/ticket';
 import { TicketService } from '../services/ticket.service';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-ticket-list',
@@ -18,6 +19,7 @@ export class TicketListComponent implements OnInit {
   constructor(
     private ticketService: TicketService,
     private modalService: NzModalService,
+    private notification: NzNotificationService,
     private route: ActivatedRoute,
     private translateService: TranslateService
   ) {}
@@ -27,6 +29,10 @@ export class TicketListComponent implements OnInit {
       const filter = params.get('filter');
       this.filterTickets(filter);
     });
+  }
+
+  handleOverdueNotification(message: string): void {
+    this.notification.warning('Notification', message);
   }
 
   async filterTickets(filter: string): Promise<void> {
