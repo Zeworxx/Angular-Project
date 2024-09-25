@@ -11,6 +11,7 @@ import { AuthService } from './auth/services/auth.service';
 })
 export class AppComponent implements OnInit {
   public isLoginOrRegister = false;
+  public currentLang: string;
 
   constructor(
     private translateService: TranslateService,
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit {
     private authService: AuthService
   ) {
     this.translateService.setDefaultLang('fr');
+    this.currentLang = 'fr';
   }
 
   ngOnInit(): void {
@@ -29,6 +31,11 @@ export class AppComponent implements OnInit {
           event.url === '/register' ||
           event.url === '/';
       });
+  }
+
+  switchLanguage(): void {
+    this.currentLang = this.currentLang === 'fr' ? 'en' : 'fr';
+    this.translateService.use(this.currentLang);
   }
 
   logout() {

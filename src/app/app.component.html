@@ -33,6 +33,13 @@
   </nz-sider>
   <nz-layout class="main-content">
     <nz-content>
+      <div class="language-switcher">
+        <button (click)="switchLanguage()">
+          {{
+            currentLang === "fr" ? "Switch to English" : "Passer en Français"
+          }}
+        </button>
+      </div>
       <router-outlet></router-outlet>
     </nz-content>
     <nz-footer>{{ "footer.label" | translate }} </nz-footer>

@@ -1,0 +1,46 @@
+{
+  "footer": {
+    "label": "© 2021 All rights reserved. Designed by Amir Talbi, Dorian Mavoungoud & Baptiste Girard"
+  },
+  "sider": {
+    "project-menu": "Project",
+    "today-task": "Today's Tasks",
+    "weekly-task": "7 Days",
+    "monthly-task": "30 Days",
+    "all-task": "All Tasks",
+    "add-task": "Add Task"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "not-registered": "Don't have an account? ",
+    "forgot-password": "Forgot Password",
+    "password": "Password",
+    "confirm-password": "Confirm Password",
+    "error-password": "Please confirm your password",
+    "error-confirm": "The two passwords you entered do not match!",
+    "error-email": "This is not a valid email address",
+    "placeholder": {
+      "email": "Email",
+      "password": "Password",
+      "confirm-password": "Confirm Password",
+      "name": "Name"
+    }
+  },
+  "tickets": {
+    "description-label": "Description:",
+    "due-date-label": "Due Date:",
+    "due-time-left": "Time Left:",
+    "sub-task-label": "Sub-task No.{{index}}:",
+    "days-remaining": "Days Remaining",
+    "deadline-passed": "Deadline Passed",
+    "created-notification": "Task successfully created",
+    "success-title": "Success",
+    "title": {
+      "today": "Today's Tasks",
+      "weekly": "Weekly Tasks",
+      "monthly": "Monthly Tasks",
+      "all": "All Tasks"
+    }
+  }
+}
