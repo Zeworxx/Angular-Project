@@ -19,8 +19,8 @@ export class TicketService {
     return this.http.get<ITicket>(`${this.apiUrl}/${id}`);
   }
 
-  updateTicket(id: number, ticket: ITicket): Observable<ITicket> {
-    return this.http.put<ITicket>(`${this.apiUrl}/${id}`, ticket);
+  updateTicket(ticket: ITicket): Observable<ITicket> {
+    return this.http.put<ITicket>(`${this.apiUrl}/${ticket.id}`, ticket);
   }
 
   deleteTicket(id: number): Observable<void> {

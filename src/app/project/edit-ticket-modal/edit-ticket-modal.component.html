@@ -1,0 +1,44 @@
+<nz-modal
+  [nzVisible]="true"
+  nzTitle="Modifier le ticket"
+  (nzOnCancel)="closeModal()"
+  (nzOnOk)="submitForm()"
+>
+  <form [formGroup]="editTicketForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Titre requis">
+        <nz-input-group nzPrefixIcon="edit">
+          <input nz-input formControlName="title" placeholder="Titre" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Description requise">
+        <nz-input-group nzPrefixIcon="file-text">
+          <textarea
+            nz-input
+            formControlName="description"
+            placeholder="Description"
+            rows="3"
+          ></textarea>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Date de fin requise">
+        <nz-input-group nzPrefixIcon="calendar">
+          <input nz-input formControlName="dueDate" placeholder="Date de fin" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Statut requis">
+        <nz-select formControlName="status" placeholder="Statut">
+          <nz-option nzValue="todo" nzLabel="A faire"></nz-option>
+          <nz-option nzValue="in-progress" nzLabel="En cours"></nz-option>
+          <nz-option nzValue="done" nzLabel="Terminé"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-modal>
