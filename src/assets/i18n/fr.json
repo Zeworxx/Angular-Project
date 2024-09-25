@@ -30,6 +30,12 @@
     "due-time-left": "Temps restant :",
     "sub-task-label": "Sous-tâches N°{{index}} :",
     "days-remaining": "Jours restants",
-    "deadline-passed": "echeance depassee"
+    "deadline-passed": "Échéance dépassée",
+    "title": {
+      "today": "Tâches d'aujourd'hui",
+      "weekly": "Tâches de la semaine",
+      "monthly": "Tâches du mois",
+      "all": "Toutes les tâches"
+    }
   }
 }

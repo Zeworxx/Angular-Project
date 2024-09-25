@@ -10,8 +10,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'create-ticket', component: CreateTicketComponent },
-  { path: 'ticket-list/all', component: TicketListComponent },
-  { path: 'user/:userId/create-ticket', component: CreateTicketComponent },
+  { path: 'ticket-list/:filter', component: TicketListComponent },
 ];
 
 @NgModule({

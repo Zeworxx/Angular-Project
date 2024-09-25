@@ -13,19 +13,19 @@
         <span nz-icon nzType="plus-circle" nzTheme="outline"></span>
         <span>{{ "sider.add-task" | translate }}</span>
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item [routerLink]="['/ticket-list', 'today']">
         <span nz-icon nzType="field-time"></span>
         <span>{{ "sider.today-task" | translate }}</span>
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item [routerLink]="['/ticket-list', '7-day']">
         <span nz-icon nzType="field-time"></span>
         <span>{{ "sider.weekly-task" | translate }}</span>
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item [routerLink]="['/ticket-list', '30-day']">
         <span nz-icon nzType="field-time"></span>
         <span>{{ "sider.monthly-task" | translate }}</span>
       </li>
-      <li nz-menu-item [routerLink]="'ticket-list/all'">
+      <li nz-menu-item [routerLink]="['/ticket-list', 'all']">
         <span nz-icon nzType="field-time"></span>
         <span>{{ "sider.all-task" | translate }}</span>
       </li>

@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NzModalRef, NZ_MODAL_DATA } from 'ng-zorro-antd/modal';
-import { ITicket } from '../create-ticket/models/ticket';
-import { TicketService } from '../create-ticket/service/ticket.service';
+import { NZ_MODAL_DATA, NzModalRef } from 'ng-zorro-antd/modal';
+import { ITicket } from '../../ticket-list/models/ticket';
+import { TicketService } from '../../ticket-list/services/ticket.service';
 import { dueDateValidator } from '../validators/date.validators';
 
 @Component({
@@ -22,7 +22,6 @@ export class EditTicketModalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('modal data', this.modalData);
     this.ticket = this.modalData.ticket;
     this.editTicketForm = this.fb.group({
       title: [this.ticket.title, [Validators.required]],

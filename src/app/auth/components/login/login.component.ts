@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) return;
     this.authService.login(this.loginForm.value).subscribe(
       (user:any) => {
-        console.log(user);
         if (user.length === 0) return alert('Erreur dans le pseudo ou le mot de passe');
         this.authService.user = user[0];
         if(!this.authService.user) return;

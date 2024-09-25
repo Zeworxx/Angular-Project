@@ -8,9 +8,9 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
+import { ITicket } from '../../ticket-list/models/ticket';
+import { TicketService } from '../../ticket-list/services/ticket.service';
 import { dueDateValidator } from '../validators/date.validators';
-import { ITicket } from './models/ticket';
-import { TicketService } from './service/ticket.service';
 
 @Component({
   selector: 'app-create-ticket',
@@ -71,7 +71,6 @@ export class CreateTicketComponent implements OnInit {
 
     this.ticketService.createTicket(newTicket).subscribe(
       (ticket) => {
-        console.log('Ticket créé avec succès:', ticket);
         this.router.navigate(['/ticket-list/all']);
       },
       (error) => {
