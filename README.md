@@ -4,7 +4,10 @@ Ce projet a été généré avec [Angular CLI](https://github.com/angular/angula
 
 ## Serveur de développement
 
-Exécutez `ng serve` pour démarrer un serveur de développement. Naviguez vers `http://localhost:4200/`. L'application se rechargera automatiquement si vous modifiez l'un des fichiers source.
+Exécutez `npm install` pour installer les dépendances nécessaires au bon fonctionnement du projet.
+Exécutez `npm start` pour lancer en même temps le serveur de base de données et l'application web.
+Rendez vous [ici](http://localhost:4200/)
+
 
 ## Génération de code
 
@@ -13,14 +16,6 @@ Exécutez `ng generate component component-name` pour générer un nouveau compo
 ## Construction
 
 Exécutez `ng build` pour construire le projet. Les artefacts de construction seront stockés dans le répertoire `dist/`.
-
-## Exécution des tests unitaires
-
-Exécutez `ng test` pour exécuter les tests unitaires via [Karma](https://karma-runner.github.io).
-
-## Exécution des tests de bout en bout
-
-Exécutez `ng e2e` pour exécuter les tests de bout en bout via une plateforme de votre choix. Pour utiliser cette commande, vous devez d'abord ajouter un package qui implémente des capacités de test de bout en bout.
 
 ## Aide supplémentaire
 
