@@ -6,7 +6,6 @@
     *ngFor="let ticket of tickets"
     [nzHeader]="ticket.title"
     [nzExtra]="extraTpl"
-    *ngFor="let ticket of tickets"
     [ngClass]="{
       'todo': ticket.status === 'todo',
       'in-progress': ticket.status === 'inProgress',
