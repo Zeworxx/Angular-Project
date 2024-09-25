@@ -1,4 +1,14 @@
 {
+  "categories": [
+    {
+      "id": "1",
+      "name": "Work"
+    },
+    {
+      "id": "2",
+      "name": "Personal"
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -30,28 +40,15 @@
       "id": "1",
       "name": "test",
       "description": "test",
-      "users": [
-        1
-      ]
+      "users": [1]
     }
   ],
   "tickets": [
     {
       "id": "0",
-      "title": "Test",
-      "description": "test",
-      "status": "todo",
-      "subtasks": [
-        {
-          "title": "test sous tache"
-        }
-      ]
-    },
-    {
-      "id": "0",
       "title": "test2",
       "description": "test 2",
-      "dueDate": "2024-09-25T09:50:39.157Z",
+      "dueDate": "2024-09-24T09:50:39.157Z",
       "status": "todo",
       "subtasks": [
         {

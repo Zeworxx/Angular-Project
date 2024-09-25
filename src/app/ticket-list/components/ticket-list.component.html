@@ -7,10 +7,13 @@
     [nzHeader]="ticket.title"
     [nzExtra]="extraTpl"
     [ngClass]="{
-      'todo': ticket.status === 'todo',
+      todo: ticket.status === 'todo',
       'in-progress': ticket.status === 'inProgress',
-      'done': ticket.status === 'finished'
-    }"  >
+      done: ticket.status === 'finished'
+    }"
+    appHighlightOverdue
+    [dueDate]="ticket.dueDate"
+  >
     <p>
       {{ "tickets.description-label" | translate }} {{ ticket.description }}
     </p>

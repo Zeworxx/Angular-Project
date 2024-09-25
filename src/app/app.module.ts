@@ -27,6 +27,7 @@ import { CreateTicketComponent } from './project/create-ticket/create-ticket.com
 import { EditTicketModalComponent } from './project/edit-ticket-modal/edit-ticket-modal.component';
 import { DaysRemaining } from './shared/pipe/daysremaining.pipe';
 import { TicketListComponent } from './ticket-list/components/ticket-list.component';
+import { HighlightOverdueDirective } from './shared/directive/highlight-overdue.directive';
 
 registerLocaleData(fr);
 
@@ -43,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TicketListComponent,
     DaysRemaining,
     EditTicketModalComponent,
+    HighlightOverdueDirective,
   ],
   imports: [
     BrowserModule,
@@ -71,5 +73,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR }],
   bootstrap: [AppComponent],
+  exports: [HighlightOverdueDirective],
 })
 export class AppModule {}

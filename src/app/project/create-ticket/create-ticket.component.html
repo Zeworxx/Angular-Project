@@ -46,6 +46,14 @@
       </nz-select>
     </nz-form-control>
   </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Catégorie requise">
+      <nz-select formControlName="category" placeholder="Catégorie">
+        <nz-option nzValue="1" nzLabel="Work"></nz-option>
+        <nz-option nzValue="2" nzLabel="Personal"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
   <div formArrayName="subtasks">
     <div
       *ngFor="let subtask of subtasks.controls; let i = index"

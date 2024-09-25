@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -21,6 +21,7 @@ import { dueDateValidator } from '../validators/date.validators';
 })
 export class CreateTicketComponent implements OnInit {
   ticketForm: FormGroup;
+  @Output() ticketCreated = new EventEmitter<ITicket>();
   private userId: string;
 
   constructor(
@@ -41,6 +42,7 @@ export class CreateTicketComponent implements OnInit {
       dueDate: new FormControl('', [Validators.required, dueDateValidator]),
       status: new FormControl('todo', [Validators.required]),
       subtasks: this.fb.array([]),
+      category: new FormControl('', [Validators.required]),
     });
   }
 
@@ -71,21 +73,17 @@ export class CreateTicketComponent implements OnInit {
       status: this.ticketForm.value.status,
       subtasks: this.ticketForm.value.subtasks,
       user: this.userId,
+      category: this.ticketForm.value.category,
     };
 
-    this.ticketService.createTicket(newTicket).subscribe({
-      next: () => {
-        this.notification.create(
-          'success',
-          this.translateService.instant('tickets.created-notification'),
-          this.translateService.instant('tickets.success-title'),
-          { nzPlacement: 'bottomRight', nzDuration: 3000 }
-        );
+    this.ticketService.createTicket(newTicket).subscribe(
+      (ticket) => {
+        this.ticketCreated.emit(ticket);
         this.router.navigate(['/ticket-list/all']);
       },
-      error: (error) => {
+      (error) => {
         console.error('Erreur lors de la création du ticket:', error);
-      },
-    });
+      }
+    );
   }
 }
