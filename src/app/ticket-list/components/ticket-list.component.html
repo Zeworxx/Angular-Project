@@ -3,6 +3,7 @@
 </div>
 <nz-collapse>
   <nz-collapse-panel
+    *ngFor="let ticket of tickets"
     [nzHeader]="ticket.title"
     [nzExtra]="extraTpl"
     *ngFor="let ticket of tickets"
@@ -23,12 +24,15 @@
       {{ ticket.dueDate | daysRemaining }}
     </p>
     <p *ngFor="let subTask of ticket.subtasks; let i = index">
-      {{ "tickets.sub-task-label" | translate : { index: i + +1 } }}
+      {{ "tickets.sub-task-label" | translate : { index: i + 1 } }}
       {{ subTask.title }}
     </p>
+    <ng-template #extraTpl>
+      <span
+        nz-icon
+        nzType="setting"
+        (click)="openEditModal(ticket); $event.stopPropagation()"
+      ></span>
+    </ng-template>
   </nz-collapse-panel>
 </nz-collapse>
-<ng-template #extraTpl>
-  <!-- You can use stopPropagation if you don't want the panel to toggle -->
-  <span nz-icon nzType="setting" (click)="$event.stopPropagation()"></span>
-</ng-template>

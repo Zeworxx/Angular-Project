@@ -16,14 +16,16 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { CreateTicketComponent } from './project/create-ticket/create-ticket.component';
-import { TicketListComponent } from './ticket-list/components/ticket-list.component';
+import { EditTicketModalComponent } from './project/edit-ticket-modal/edit-ticket-modal.component';
 import { DaysRemaining } from './shared/pipe/daysremaining.pipe';
+import { TicketListComponent } from './ticket-list/components/ticket-list.component';
 
 registerLocaleData(fr);
 
@@ -39,12 +41,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     CreateTicketComponent,
     TicketListComponent,
     DaysRemaining,
+    EditTicketModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NzLayoutModule,
     NzButtonModule,
+    NzModalModule,
     NzIconModule,
     NzInputModule,
     HttpClientModule,

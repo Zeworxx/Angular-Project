@@ -6,11 +6,11 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { TicketService } from '../../auth/services/ticket.service';
-import { ITicket } from '../../auth/models/ticket';
-import { dueDateValidator } from '../validators/date.validators';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
+import { dueDateValidator } from '../validators/date.validators';
+import { ITicket } from './models/ticket';
+import { TicketService } from './service/ticket.service';
 
 @Component({
   selector: 'app-create-ticket',
@@ -21,7 +21,12 @@ export class CreateTicketComponent implements OnInit {
   ticketForm: FormGroup;
   private userId: string;
 
-  constructor(private fb: FormBuilder, private ticketService: TicketService, private route: ActivatedRoute, private authService: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private ticketService: TicketService,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.userId = this.authService.getSavedUser();
@@ -29,7 +34,7 @@ export class CreateTicketComponent implements OnInit {
     this.ticketForm = this.fb.group({
       title: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
-      dueDate: new FormControl('', [Validators.required, dueDateValidator]), // Ajouter le validateur personnalisé
+      dueDate: new FormControl('', [Validators.required, dueDateValidator]),
       status: new FormControl('todo', [Validators.required]),
       subtasks: this.fb.array([]),
     });
@@ -67,6 +72,7 @@ export class CreateTicketComponent implements OnInit {
     this.ticketService.createTicket(newTicket).subscribe(
       (ticket) => {
         console.log('Ticket créé avec succès:', ticket);
+        this.router.navigate(['/ticket-list/all']);
       },
       (error) => {
         console.error('Erreur lors de la création du ticket:', error);
