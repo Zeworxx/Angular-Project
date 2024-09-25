@@ -14,7 +14,7 @@
     "login": "Se connecter",
     "register": "S'inscrire",
     "not-registered": "Vous n'avez pas de compte ? ",
-    "forgot-password": "Mot de passe oublie",
+    "forgot-password": "Mot de passe oublié",
     "password": "Mot de passe",
     "confirm-password": "Confirmez le MDP",
     "error-password": "S'il vous plaît confirmer votre mot de passe",
@@ -42,5 +42,51 @@
       "monthly": "Tâches du mois",
       "all": "Toutes les tâches"
     }
+  },
+  "modal": {
+    "edit-ticket-title": "Modifier le ticket",
+    "title-required": "Titre requis",
+    "description-required": "Description requise",
+    "due-date-required": "Date de fin requise",
+    "status-required": "Statut requis",
+    "title-placeholder": "Titre",
+    "description-placeholder": "Description",
+    "due-date-placeholder": "Date de fin",
+    "status-placeholder": "Statut",
+    "status-options": {
+      "todo": "A faire",
+      "in-progress": "En cours",
+      "done": "Terminé"
+    }
+  },
+  "language-switcher": {
+    "switch-to-english": "Switch to English",
+    "switch-to-french": "Passer en Français"
+  },
+  "create-ticket": {
+    "title-required": "Titre requis",
+    "title-placeholder": "Titre",
+    "description-required": "Description requise",
+    "description-placeholder": "Description",
+    "due-date-required": "Date requise",
+    "due-date-placeholder": "Date limite",
+    "status-required": "Statut requis",
+    "status-placeholder": "Statut",
+    "status-options": {
+      "todo": "A faire",
+      "in-progress": "En cours",
+      "finished": "Terminé"
+    },
+    "category-required": "Catégorie requise",
+    "category-placeholder": "Catégorie",
+    "category-options": {
+      "work": "Travail",
+      "personal": "Personnel"
+    },
+    "subtask-title-required": "Titre de la sous-tâche requis",
+    "subtask-title-placeholder": "Titre de la sous-tâche",
+    "remove-subtask": "Supprimer",
+    "add-subtask": "Ajouter une sous-tâche",
+    "create-ticket": "Créer le ticket"
   }
 }

@@ -35,9 +35,7 @@
     <nz-content>
       <div class="language-switcher">
         <button (click)="switchLanguage()">
-          {{
-            currentLang === "fr" ? "Switch to English" : "Passer en Français"
-          }}
+          {{ getLanguageSwitcherText() }}
         </button>
       </div>
       <router-outlet></router-outlet>

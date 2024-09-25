@@ -5,19 +5,18 @@
   (ngSubmit)="submitForm()"
 >
   <nz-form-item>
-    <nz-form-control nzErrorTip="Ce n'est pas une adresse e-mail valide">
+    <nz-form-control [nzErrorTip]="'auth.error-email' | translate">
       <nz-input-group nzPrefixIcon="mail">
         <input
           nzRequired
           type="text"
           nz-input
           formControlName="email"
-          placeholder="{{ 'auth.placeholder.email' | translate }}"
+          [placeholder]="'auth.placeholder.email' | translate"
         />
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
-
   <nz-form-item>
     <nz-form-control>
       <nz-input-group nzPrefixIcon="lock">
@@ -26,12 +25,11 @@
           nzRequired
           nz-input
           formControlName="password"
-          placeholder="{{ 'auth.placeholder.password' | translate }}"
+          [placeholder]="'auth.placeholder.password' | translate"
         />
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
-
   <nz-form-item>
     <nz-form-control>
       <nz-input-group nzPrefixIcon="lock">
@@ -40,12 +38,11 @@
           nzRequired
           nz-input
           formControlName="checkPassword"
-          placeholder="{{ 'auth.placeholder.confirm-password' | translate }}"
+          [placeholder]="'auth.placeholder.confirm-password' | translate"
         />
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
-
   <nz-form-item>
     <nz-form-control>
       <nz-input-group nzPrefixIcon="user">
@@ -54,19 +51,14 @@
           type="text"
           nzRequired
           formControlName="name"
-          placeholder="{{ 'auth.placeholder.name' | translate }}"
+          [placeholder]="'auth.placeholder.name' | translate"
         />
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
-
   <nz-form-item>
     <nz-form-control>
-      <button
-        nz-button
-        class="button margin"
-        [nzType]="'primary'"
-      >
+      <button nz-button class="button margin" [nzType]="'primary'">
         {{ "auth.register" | translate }}
       </button>
     </nz-form-control>

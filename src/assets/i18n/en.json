@@ -42,5 +42,51 @@
       "monthly": "Monthly Tasks",
       "all": "All Tasks"
     }
+  },
+  "modal": {
+    "edit-ticket-title": "Edit Ticket",
+    "title-required": "Title required",
+    "description-required": "Description required",
+    "due-date-required": "Due date required",
+    "status-required": "Status required",
+    "title-placeholder": "Title",
+    "description-placeholder": "Description",
+    "due-date-placeholder": "Due Date",
+    "status-placeholder": "Status",
+    "status-options": {
+      "todo": "To Do",
+      "in-progress": "In Progress",
+      "done": "Done"
+    }
+  },
+  "language-switcher": {
+    "switch-to-english": "Switch to English",
+    "switch-to-french": "Passer en Français"
+  },
+  "create-ticket": {
+    "title-required": "Title required",
+    "title-placeholder": "Title",
+    "description-required": "Description required",
+    "description-placeholder": "Description",
+    "due-date-required": "Due date required",
+    "due-date-placeholder": "Due Date",
+    "status-required": "Status required",
+    "status-placeholder": "Status",
+    "status-options": {
+      "todo": "To Do",
+      "in-progress": "In Progress",
+      "finished": "Finished"
+    },
+    "category-required": "Category required",
+    "category-placeholder": "Category",
+    "category-options": {
+      "work": "Work",
+      "personal": "Personal"
+    },
+    "subtask-title-required": "Subtask title required",
+    "subtask-title-placeholder": "Subtask Title",
+    "remove-subtask": "Remove",
+    "add-subtask": "Add Subtask",
+    "create-ticket": "Create Ticket"
   }
 }

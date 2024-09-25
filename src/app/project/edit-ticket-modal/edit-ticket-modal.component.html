@@ -1,42 +1,62 @@
 <nz-modal
   [nzVisible]="true"
-  nzTitle="Modifier le ticket"
+  [nzTitle]="'modal.edit-ticket-title' | translate"
   (nzOnCancel)="closeModal()"
   (nzOnOk)="submitForm()"
 >
   <form [formGroup]="editTicketForm" (ngSubmit)="submitForm()">
     <nz-form-item>
-      <nz-form-control nzErrorTip="Titre requis">
+      <nz-form-control [nzErrorTip]="'modal.title-required' | translate">
         <nz-input-group nzPrefixIcon="edit">
-          <input nz-input formControlName="title" placeholder="Titre" />
+          <input
+            nz-input
+            formControlName="title"
+            [placeholder]="'modal.title-placeholder' | translate"
+          />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-control nzErrorTip="Description requise">
+      <nz-form-control [nzErrorTip]="'modal.description-required' | translate">
         <nz-input-group nzPrefixIcon="file-text">
           <textarea
             nz-input
             formControlName="description"
-            placeholder="Description"
+            [placeholder]="'modal.description-placeholder' | translate"
             rows="3"
           ></textarea>
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-control nzErrorTip="Date de fin requise">
+      <nz-form-control [nzErrorTip]="'modal.due-date-required' | translate">
         <nz-input-group nzPrefixIcon="calendar">
-          <input nz-input formControlName="dueDate" placeholder="Date de fin" />
+          <input
+            nz-input
+            formControlName="dueDate"
+            [placeholder]="'modal.due-date-placeholder' | translate"
+          />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-control nzErrorTip="Statut requis">
-        <nz-select formControlName="status" placeholder="Statut">
-          <nz-option nzValue="todo" nzLabel="A faire"></nz-option>
-          <nz-option nzValue="in-progress" nzLabel="En cours"></nz-option>
-          <nz-option nzValue="done" nzLabel="Terminé"></nz-option>
+      <nz-form-control [nzErrorTip]="'modal.status-required' | translate">
+        <nz-select
+          formControlName="status"
+          nzPlaceHolder="{{ 'modal.status-placeholder' | translate }}"
+        >
+          <nz-option
+            nzValue="todo"
+            [nzLabel]="'modal.status-options.todo' | translate"
+          ></nz-option>
+          <nz-option
+            nzValue="in-progress"
+            [nzLabel]="'modal.status-options.in-progress' | translate"
+          ></nz-option>
+          <nz-option
+            nzValue="done"
+            [nzLabel]="'modal.status-options.done' | translate"
+          ></nz-option>
         </nz-select>
       </nz-form-control>
     </nz-form-item>

@@ -1,23 +1,25 @@
 <form [formGroup]="ticketForm" (ngSubmit)="submitForm()" class="ticket-form">
   <nz-form-item class="form-item">
-    <nz-form-control nzErrorTip="Titre requis">
+    <nz-form-control [nzErrorTip]="'create-ticket.title-required' | translate">
       <nz-input-group nzPrefixIcon="edit">
         <input
           nz-input
           formControlName="title"
-          placeholder="Titre"
+          [placeholder]="'create-ticket.title-placeholder' | translate"
           class="input-field"
         />
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item class="form-item">
-    <nz-form-control nzErrorTip="Description requise">
+    <nz-form-control
+      [nzErrorTip]="'create-ticket.description-required' | translate"
+    >
       <nz-input-group nzPrefixIcon="file-text">
         <textarea
           nz-input
           formControlName="description"
-          placeholder="Description"
+          [placeholder]="'create-ticket.description-placeholder' | translate"
           rows="3"
           class="textarea-field"
         ></textarea>
@@ -25,32 +27,54 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item class="form-item">
-    <nz-form-control nzErrorTip="Date requise">
+    <nz-form-control
+      [nzErrorTip]="'create-ticket.due-date-required' | translate"
+    >
       <nz-date-picker
         formControlName="dueDate"
-        placeholder="Date limite"
+        [nzPlaceHolder]="'create-ticket.due-date-placeholder' | translate"
         class="date-field"
       ></nz-date-picker>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item class="form-item">
-    <nz-form-control nzErrorTip="Statut requis">
+    <nz-form-control [nzErrorTip]="'create-ticket.status-required' | translate">
       <nz-select
         formControlName="status"
-        placeholder="Statut"
+        [nzPlaceHolder]="'create-ticket.status-placeholder' | translate"
         class="select-field"
       >
-        <nz-option nzValue="todo" nzLabel="A faire"></nz-option>
-        <nz-option nzValue="inProgress" nzLabel="En cours"></nz-option>
-        <nz-option nzValue="finished" nzLabel="Terminé"></nz-option>
+        <nz-option
+          nzValue="todo"
+          [nzLabel]="'create-ticket.status-options.todo' | translate"
+        ></nz-option>
+        <nz-option
+          nzValue="inProgress"
+          [nzLabel]="'create-ticket.status-options.in-progress' | translate"
+        ></nz-option>
+        <nz-option
+          nzValue="finished"
+          [nzLabel]="'create-ticket.status-options.finished' | translate"
+        ></nz-option>
       </nz-select>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-control nzErrorTip="Catégorie requise">
-      <nz-select formControlName="category" placeholder="Catégorie">
-        <nz-option nzValue="1" nzLabel="Work"></nz-option>
-        <nz-option nzValue="2" nzLabel="Personal"></nz-option>
+    <nz-form-control
+      [nzErrorTip]="'create-ticket.category-required' | translate"
+    >
+      <nz-select
+        formControlName="category"
+        [nzPlaceHolder]="'create-ticket.category-placeholder' | translate"
+      >
+        <nz-option
+          nzValue="1"
+          [nzLabel]="'create-ticket.category-options.work' | translate"
+        ></nz-option>
+        <nz-option
+          nzValue="2"
+          [nzLabel]="'create-ticket.category-options.personal' | translate"
+        ></nz-option>
       </nz-select>
     </nz-form-control>
   </nz-form-item>
@@ -62,12 +86,16 @@
     >
       <nz-form-item class="form-item">
         <div class="flex">
-          <nz-form-control nzErrorTip="Titre requis">
+          <nz-form-control
+            [nzErrorTip]="'create-ticket.subtask-title-required' | translate"
+          >
             <nz-input-group nzPrefixIcon="edit">
               <input
                 nz-input
                 formControlName="title"
-                placeholder="Titre de la sous-tâche"
+                [placeholder]="
+                  'create-ticket.subtask-title-placeholder' | translate
+                "
                 class="input-field"
               />
             </nz-input-group>
@@ -78,7 +106,7 @@
             class="danger-button"
             (click)="removeSubtask(i)"
           >
-            Supprimer
+            {{ "create-ticket.remove-subtask" | translate }}
           </button>
         </div>
       </nz-form-item>
@@ -86,7 +114,7 @@
   </div>
   <div class="actions">
     <button nz-button nzType="dashed" (click)="addSubtask()" class="add-button">
-      Ajouter une sous-tâche
+      {{ "create-ticket.add-subtask" | translate }}
     </button>
     <button
       nz-button
@@ -94,7 +122,7 @@
       [disabled]="ticketForm.invalid"
       class="submit-button"
     >
-      Créer le ticket
+      {{ "create-ticket.create-ticket" | translate }}
     </button>
   </div>
 </form>
