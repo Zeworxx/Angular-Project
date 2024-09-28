@@ -28,6 +28,8 @@ import { EditTicketModalComponent } from './project/edit-ticket-modal/edit-ticke
 import { DaysRemaining } from './shared/pipe/daysremaining.pipe';
 import { TicketListComponent } from './ticket-list/components/ticket-list.component';
 import { HighlightOverdueDirective } from './shared/directive/highlight-overdue.directive';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(fr);
 
@@ -53,12 +55,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     NzButtonModule,
     NzModalModule,
     NzIconModule,
+    NzSwitchModule,
     NzInputModule,
     HttpClientModule,
     NzMenuModule,
     NzFormModule,
     NzDatePickerModule,
     NzSelectModule,
+    FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NzCollapseModule,

@@ -38,12 +38,6 @@ export class AppComponent implements OnInit {
     this.translateService.use(this.currentLang);
   }
 
-  getLanguageSwitcherText(): string {
-    return this.currentLang === 'fr'
-      ? this.translateService.instant('language-switcher.switch-to-english')
-      : this.translateService.instant('language-switcher.switch-to-french');
-  }
-
   logout() {
     this.authService.logout();
     this.router.navigate(['/login']);
